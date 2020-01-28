@@ -1,0 +1,21 @@
+{
+  "name": "multimarkdown-6",
+  "version": "0.0.0",
+  "description": "JavaScript wrapper for multimarkdown executable",
+  "author": "Julien Dargelos <contact@juliendargelos.com>",
+  "license": "MIT",
+  "repository": "juliendargelos/multimarkdown-6-js",
+  "homepage": "https://github.com/juliendargelos/multimarkdown-6-js#readme",
+  "bugs": "https://github.com/juliendargelos/multimarkdown-6-js/issues",
+  "main": "index.js",
+  "bin" : {
+    "multimarkdown": "./node_modules/multimarkdown/build/multimarkdown"
+  },
+  "scripts": {
+    "preinstall": "(which make && which cmake) || (echo 'make and cmake are required to install multimarkdown-6' && exit 1)",
+    "postinstall": "cd node_modules/multimarkdown && make release && cd build && make"
+  },
+  "dependencies": {
+    "multimarkdown": "fletcher/MultiMarkdown-6"
+  }
+}
